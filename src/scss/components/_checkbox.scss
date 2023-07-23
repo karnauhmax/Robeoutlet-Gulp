@@ -1,0 +1,28 @@
+.checkbox-label {
+  position: relative;
+  cursor: pointer;
+  padding-left: rem(35);
+
+  input {
+    appearance: none;
+    position: absolute;
+
+    &:checked + .checkbox {
+      background-image: url('../img/svg/custom-checkbox-checked.svg');
+    }
+
+    &:focus-visible + .checkbox {
+      border: 2px solid black;
+    }
+  }
+}
+
+.checkbox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url('../img/svg/custom-checkbox-unchecked.svg');
+  background-size: contain;
+}

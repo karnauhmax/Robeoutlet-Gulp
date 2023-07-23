@@ -1,0 +1,12 @@
+.reviews {
+  &__inner {
+    display: grid;
+    justify-items: center;
+  }
+
+  .placeholder {
+    grid-column: unset;
+    outline: none;
+    height: initial;
+  }
+}

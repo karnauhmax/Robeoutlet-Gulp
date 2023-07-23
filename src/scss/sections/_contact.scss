@@ -1,0 +1,113 @@
+.contact {
+  font-weight: 300;
+  @include adaptiveValue(font-size, 18, 16, 1920, 360, 1);
+  &__title {
+    @include adaptiveValue(margin-bottom, 66, 30, 1920, 360, 1);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr minmax(auto, 313px);
+    @include adaptiveValue(gap, 30, 20, 1920, 1200, 1);
+
+    @include _1200 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include _768 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__img {
+    padding-bottom: 96%;
+    @include _1200 {
+      grid-row: 1/2;
+      padding-bottom: 75%;
+    }
+
+    @include _768 {
+      display: none;
+    }
+  }
+
+  &__details {
+    background-color: var(--primary);
+    color: var(--text-secondary);
+    @include adaptiveValue(padding-top, 49, 20, 1920, 360, 1);
+    @include adaptiveValue(padding-bottom, 49, 20, 1920, 360, 1);
+    @include adaptiveValue(padding-right, 40, 20, 1920, 360, 1);
+    @include adaptiveValue(padding-left, 40, 20, 1920, 360, 1);
+    row-gap: rem(30);
+    grid-template-rows: min-content 1fr;
+  }
+
+  &__details-info {
+    row-gap: rem(20);
+  }
+
+  &__item {
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: minmax(auto, 130px) 2fr;
+    @include adaptiveValue(column-gap, 30, 15, 1920, 1200, 1);
+    word-break: break-word;
+
+    @include _1400 {
+      grid-template-columns: minmax(auto, 110px) 1fr;
+    }
+  }
+
+  &__item-content {
+    justify-self: start;
+  }
+
+  &__details-socials {
+    display: flex;
+    flex-wrap: wrap;
+    @include adaptiveValue(column-gap, 45, 25, 1920, 360, 1);
+    row-gap: rem(15);
+    align-self: end;
+  }
+
+  &__form-body {
+    padding: rem(23) rem(20);
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(20);
+
+    @include _1200 {
+      grid-column: span 2;
+    }
+
+    @include _768 {
+      grid-column: span 1;
+    }
+
+    @include _576 {
+      grid-template-columns: 1fr;
+    }
+
+    button[type='submit'] {
+      justify-self: start;
+    }
+  }
+
+  &__form-inner {
+    gap: rem(30);
+  }
+
+  &__form-textarea {
+    height: 27px;
+    width: 100%;
+  }
+
+  &__form-title {
+    font-weight: 500;
+    @include adaptiveValue(font-size, 18, 16, 1920, 360, 1);
+    grid-column: span 2;
+
+    @include _576 {
+      grid-column: span 1;
+    }
+  }
+}

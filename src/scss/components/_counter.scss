@@ -1,0 +1,43 @@
+.counter {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--black);
+  border-radius: 2px;
+  padding: rem(5);
+  height: 30px;
+  max-width: 70px;
+  gap: rem(5);
+
+
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  input {
+    appearance: none;
+    width: 100%;
+    text-align: center;
+    color: var(--black);
+    font-size: rem(16);
+
+
+    &::placeholder {
+      color: var(--black);
+    }
+  }
+
+  .plus,
+  .minus {
+    display: inline-flex;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+  }
+}

@@ -1,0 +1,107 @@
+.photos {
+  &__inner {
+    display: grid;
+    justify-items: start;
+    grid-auto-rows: minmax(10px, auto);
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--gap-primary);
+    @include adaptiveValue(column-gap, 52, 20, 1920, 992, 1);
+
+    @include _992 {
+      grid-template-columns: 1fr;
+      row-gap: rem(20);
+    }
+  }
+
+  &__img {
+    padding-bottom: 88.6%;
+    width: 100%;
+    display: block;
+
+    @include _992 {
+      padding-bottom: 54.6%;
+    }
+
+    @include _768 {
+      padding-bottom: 91.6%;
+    }
+
+    @include _576 {
+      padding-bottom: 80.6%;
+    }
+  }
+
+  &__content {
+    @include _768 {
+      display: none;
+    }
+  }
+
+  &__title {
+  }
+
+  &__btn {
+    font-weight: 300;
+    text-transform: uppercase;
+    @include adaptiveValue(font-size, 20, 16, 1920, 360, 1);
+    text-align: unset;
+  }
+
+  &__info {
+    width: 100%;
+    grid-template-rows: min-content 1fr;
+    row-gap: rem(20);
+    @include adaptiveValue(padding-top, 40, 20, 1920, 992, 1);
+    @include _992 {
+      padding-top: 0;
+    }
+
+    @include _768 {
+      row-gap: 0;
+    }
+  }
+
+  &__info-body {
+    row-gap: rem(20);
+    justify-items: start;
+    @include _992 {
+      grid-template-columns: repeat(2, 1fr);
+      @include adaptiveValue(column-gap, 40, 20, 991, 576, 1);
+      align-items: start;
+      row-gap: rem(15);
+    }
+    @include _768 {
+      display: none;
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__accordion {
+    display: none;
+    @include _768 {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      column-gap: rem(10);
+      row-gap: rem(5);
+    }
+  }
+
+  &__accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    will-change: max-height;
+    transition: 0.3s max-height ease;
+  }
+
+  &__accordion-item {
+    row-gap: rem(10);
+
+    &.active .photos__btn {
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.refund {
+  &__inner {
+    display: grid;
+    row-gap: var(--gap-primary);
+  }
+
+  p {
+    max-width: rem(1232);
+    line-height: 1.5;
+  }
+
+  &__descr {
+    display: grid;
+    row-gap: rem(15);
+  }
+
+  &__note {
+    position: relative;
+    display: grid;
+    align-items: center;
+    background-color: var(--white);
+    min-height: rem(180);
+    @include adaptiveValue(padding-top, 25, 15, 1920, 360, 1);
+    @include adaptiveValue(padding-bottom, 25, 15, 1920, 360, 1);
+    @include adaptiveValue(padding-right, 44, 30, 1920, 360, 1);
+    padding-left: rem(124);
+    font-weight: 300;
+    @include adaptiveValue(font-size, 18, 14, 1920, 360, 1);
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 23px;
+      height: 92px;
+      background-image: url('../img/svg/warning.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      left: 55px;
+      top: 45px;
+
+      @include _768 {
+        width: 18px;
+        height: 71px;
+        top: 20px;
+        left: 22px;
+      }
+
+      @include _576 {
+        width: 10px;
+        height: 43px;
+        top: 20px;
+        left: 18px;
+      }
+    }
+
+    @include _768 {
+      padding-left: rem(73);
+      min-height: unset;
+    }
+
+    @include _576 {
+      padding-left: rem(45);
+    }
+  }
+
+  &__note-descr {
+    display: grid;
+    row-gap: rem(10);
+  }
+}

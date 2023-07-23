@@ -1,0 +1,10 @@
+.custom-input {
+  border: 1px solid var(--primary);
+  background-color: var(--white);
+  padding: rem(15) rem(10);
+  border-radius: 2px;
+  width: 100%;
+  &::placeholder {
+    color: var(--primary);
+  }
+}

@@ -1,0 +1,79 @@
+.about {
+  p {
+    line-height: 1.5;
+  }
+
+  &__inner {
+    display: grid;
+    @include adaptiveValue(row-gap, 60, 30, 1920, 992, 1);
+
+    @include _992 {
+      @include adaptiveValue(row-gap, 30, 20, 992, 360, 1);
+    }
+  }
+
+  &__content {
+    display: grid;
+    @include adaptiveValue(gap, 30, 10, 1920, 360, 1);
+  }
+
+  &__media-img {
+    padding-bottom: 21.4%;
+  }
+
+  &__quality {
+    display: flex;
+    @include adaptiveValue(column-gap, 33, 30, 1920, 992, 1);
+
+    @include _992 {
+      flex-direction: column;
+      @include adaptiveValue(row-gap, 60, 20, 992, 360, 1);
+    }
+  }
+
+  &__quality-info {
+    flex: 1 1 rem(604);
+    row-gap: rem(20);
+    padding-top: rem(20);
+
+    @include _992 {
+      flex: unset;
+      padding-top: 0;
+    }
+  }
+
+  &__quality-img {
+    flex: 1 1 rem(745);
+    padding-bottom: 37.8%;
+    border-radius: 2px;
+    overflow: hidden;
+
+    @include _992 {
+      width: 100%;
+      flex: unset;
+      padding-bottom: 53.8%;
+    }
+  }
+
+  &__footer-inner {
+    display: grid;
+    row-gap: rem(15);
+  }
+
+  &__row {
+    display: flex;
+    gap: rem(20);
+    justify-content: space-between;
+
+    p {
+      flex: 0 1 rem(604);
+      @include _992 {
+        flex: unset;
+      }
+    }
+
+    @include _992 {
+      flex-direction: column;
+    }
+  }
+}

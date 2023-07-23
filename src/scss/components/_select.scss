@@ -1,0 +1,39 @@
+.select {
+  background-color: var(--white);
+  position: relative;
+  text-transform: uppercase;
+  padding: rem(10);
+  &::after {
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    background-repeat: no-repeat;
+    background-image: url('../img/svg/faq-arrow.svg');
+    width: 15px;
+    height: 15px;
+  }
+  &__options {
+    background-color: var(--white);
+    padding: rem(10) 0 0 0;
+  }
+
+  &__head {
+    width: 100%;
+    padding-right: rem(30);
+    font-weight: 300;
+    text-align: start;
+    text-transform: uppercase;
+  }
+
+  &__option {
+    text-align: start;
+    padding-top: rem(10);
+    text-transform: uppercase;
+    font-weight: 300;
+
+    &:not(:last-of-type) {
+      padding-bottom: rem(10);
+    }
+  }
+}

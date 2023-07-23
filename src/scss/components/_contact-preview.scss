@@ -1,0 +1,52 @@
+.contact-preview {
+  color: var(--lightgrey);
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include adaptiveValue(column-gap, 60, 20, 1920, 992, 1);
+    align-items: center;
+    background-color: var(--primary);
+    @include adaptiveValue(padding-right, 70, 28, 1920, 768, 1);
+    @include _768 {
+      grid-template-columns: 1fr;
+      @include adaptiveValue(padding-left, 28, 18, 768, 360, 1);
+      @include adaptiveValue(padding-right, 28, 18, 768, 360, 1);
+    }
+  }
+
+  &__img {
+    padding-bottom: 89.1%;
+    height: 100%;
+    @include _768 {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    line-height: 1.1;
+    @include adaptiveValue(font-size, 78, 44, 1920, 768, 1);
+    text-transform: uppercase;
+    span {
+      @include adaptiveValue(font-size, 61, 25, 1920, 360, 1);
+      @include _360 {
+        font-size: rem(22);
+      }
+    }
+  }
+
+  &__info {
+    max-width: rem(630);
+    padding: rem(20) 0;
+    display: grid;
+    @include adaptiveValue(row-gap, 30, 15, 1920, 360, 1);
+    @include _768 {
+      max-width: 100%;
+    }
+  }
+
+  &__link {
+    justify-self: start;
+  }
+}

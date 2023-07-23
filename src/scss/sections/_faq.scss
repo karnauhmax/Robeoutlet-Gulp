@@ -1,0 +1,80 @@
+.faq {
+  &__inner {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    @include adaptiveValue(column-gap, 132, 30, 1920, 992, 1);
+    @include _992 {
+      grid-template-columns: 1fr;
+      @include adaptiveValue(row-gap, 35, 20, 991, 360, 1);
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--primary);
+    }
+
+    &.active {
+      .faq__item-head::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__item-head {
+    position: relative;
+    width: 100%;
+    text-align: start;
+    gap: rem(10);
+    cursor: pointer;
+    padding-right: rem(40);
+    padding-bottom: rem(15);
+    font-weight: 500;
+    padding-top: rem(15);
+
+    @include _576 {
+      padding-top: rem(10);
+    }
+
+    &::after {
+      content: "";
+      background-image: url("../img/svg/faq-arrow.svg");
+      position: absolute;
+      top: 19px;
+      right: 0;
+      width: 15px;
+      height: 15px;
+      background-repeat: no-repeat;
+      transition: transform 0.3s ease;
+    }
+
+    @include _576 {
+      padding-bottom: rem(10);
+    }
+  }
+
+  &__item-content {
+    padding-bottom: rem(27);
+    @include _576 {
+      padding-bottom: rem(20);
+    }
+  }
+
+  &__item-body {
+    overflow: hidden;
+    max-height: 0;
+    will-change: max-height;
+    transition: 0.3s max-height ease;
+  }
+
+  &__item-descr {
+    max-width: rem(742);
+  }
+
+  &__arrow {
+    transition: transform 0.2s ease;
+    height: 20px;
+    align-self: start;
+  }
+}

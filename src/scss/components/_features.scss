@@ -1,0 +1,55 @@
+.features {
+  &__wrapper {
+    // background-color: transparent;
+    @include adaptiveValue(padding-top, 100, 30, 1920, 360, 1);
+    @include adaptiveValue(padding-bottom, 100, 30, 1920, 360, 1);
+    padding-right: 0;
+    padding-left: 0;
+  }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(rem(270), 1fr));
+    @include adaptiveValue(column-gap, 97, 40, 1920, 992, 1);
+
+    @include _992 {
+      grid-template-columns: repeat(auto-fill, minmax(rem(210), 1fr));
+    }
+
+    @include _768 {
+      grid-template-columns: repeat(auto-fill, minmax(rem(180), 1fr));
+
+    }
+
+    @include _576 {
+      grid-template-columns: 1fr;
+      justify-items: start;
+
+    }
+
+    @include _360 {
+    }
+  }
+
+  &__item {
+
+    @include _576 {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      align-items: center;
+      column-gap: rem(15);
+    }
+  }
+
+  &__item-title {
+    max-width: rem(292);
+    @include _992 {
+      font-weight: 300;
+    }
+  }
+
+  &__img {
+    @include _360 {
+      align-self: start;
+    }
+  }
+}

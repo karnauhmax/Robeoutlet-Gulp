@@ -1,0 +1,39 @@
+// firefox
+@mixin scrollbarSettingsForFirefox(
+  $track-color,
+  $thumb-color,
+  $thickness: thin
+) {
+  scrollbar-color: $thumb-color $track-color;
+  scrollbar-width: $thickness;
+}
+
+@mixin scrollbar(
+  $track-color,
+  $thumb-color,
+  $size,
+  $direction,
+  $radius,
+  $hover
+) {
+  &::-webkit-scrollbar {
+    @if $direction == horizontal {
+      height: $size;
+    } @else {
+      width: $size;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: $radius;
+    background-color: $track-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $radius;
+    background-color: $thumb-color;
+    &:hover {
+      box-shadow: inset 1px 1px 40px $hover;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+.guide {
+  &__title {
+    @include adaptiveValue(margin-bottom, 30, 20, 1920, 360, 1);
+    grid-column: span 2;
+
+    @include _576 {
+      grid-column: unset;
+    }
+  }
+
+  &__head {
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    @include adaptiveValue(margin-bottom, 30, 20, 1920, 360, 1);
+
+    @include _768 {
+      align-items: center;
+    }
+
+    @include _576 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @include adaptiveValue(column-gap, 70, 40, 1920, 360, 1);
+
+    @include _576 {
+      margin-bottom: rem(20);
+      column-gap: rem(20);
+    }
+  }
+
+  &__btn {
+    font-weight: 300;
+  }
+
+  &-slider-buttons {
+    position: relative;
+    grid-template-columns: min-content min-content;
+    column-gap: rem(15);
+    align-self: end;
+    display: none;
+
+    @include _576 {
+      justify-self: end;
+    }
+
+    &.active {
+      display: grid;
+    }
+  }
+
+  &-slider-next,
+  &-slider-prev {
+    position: static;
+    width: 30px;
+    height: 10px;
+  }
+
+  &-slider-button {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  button.guide-slider-prev {
+    transform: rotate(180deg);
+  }
+
+  .swiper-button-disabled {
+    opacity: 0.5;
+  }
+
+  .placeholder {
+    height: 400px;
+    background-color: grey;
+  }
+
+  &__videos {
+  }
+
+  &__videos-video {
+    width: 100%;
+    margin-bottom: var(--gap-primary);
+    height: 400px;
+    background-color: grey;
+
+    @include _992 {
+      height: 200px;
+    }
+  }
+
+  &__videos-media {
+    position: relative;
+  }
+
+  &__videos-info {
+    display: grid;
+    row-gap: rem(10);
+  }
+
+  &__videos-title {
+    text-transform: uppercase;
+    font-weight: 500;
+    @include adaptiveValue(font-size, 24, 16, 1920, 360, 1);
+  }
+
+  &__videos-btn {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(48, 48, 48, 0.4);
+    background-image: url('../img/svg/play.svg');
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-position: 20px center;
+    z-index: 10;
+  }
+
+  &__brochures-item {
+    display: grid;
+    row-gap: rem(20);
+    p {
+      line-height: 1.5;
+    }
+  }
+}

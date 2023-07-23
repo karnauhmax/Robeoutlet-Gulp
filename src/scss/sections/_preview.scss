@@ -1,0 +1,202 @@
+.preview {
+  &__inner {
+    display: grid;
+    @include adaptiveValue(row-gap, 100, 30, 1920, 360, 1);
+  }
+
+  &__item {
+    align-items: center;
+    @include adaptiveValue(gap, 54, 15, 1920, 768, 1);
+
+    &:nth-of-type(even) {
+      .preview__img {
+        grid-column: 1/9;
+        grid-row: 1/2;
+
+        @include _768 {
+          grid-column: unset;
+          grid-row: unset;
+        }
+      }
+
+      .preview__info {
+        grid-column: 9/13;
+
+        @include _768 {
+          grid-column: unset;
+          justify-self: end;
+          text-align: right;
+        }
+      }
+    }
+
+    @include _768 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__img {
+    padding-bottom: 64.4%;
+    grid-column: 5/13;
+    @include _992 {
+      padding-bottom: 57.4%;
+    }
+
+    @include _768 {
+      grid-column: unset;
+    }
+  }
+
+  &__info {
+    @include adaptiveValue(row-gap, 20, 10, 1920, 768, 1);
+    grid-column: 1/5;
+    text-align: left;
+    max-width: rem(348);
+
+    @include _1200 {
+      grid-column: 1/5;
+    }
+
+    @include _768 {
+      grid-column: unset;
+    }
+  }
+
+  &__descr {
+    @include line-clamp(4);
+  }
+
+  &__title {
+    @include adaptiveValue(font-size, 45, 24, 1920, 360, 1);
+    text-transform: uppercase;
+    font-weight: 500;
+    @include line-clamp(5);
+  }
+
+  &__link {
+    justify-self: start;
+    @include _768 {
+      display: none;
+    }
+  }
+
+  &__process {
+    color: var(--secondary);
+    background-color: var(--primary);
+    @include adaptiveValue(padding-top, 50, 20, 1920, 360, 1);
+    @include adaptiveValue(padding-bottom, 50, 20, 1920, 360, 1);
+    @include _992 {
+      @include adaptiveValue(padding-right, 20, 10, 991.98, 360, 1);
+      @include adaptiveValue(padding-left, 20, 10, 991.98, 360, 1);
+    }
+
+    &-item {
+      @include adaptiveValue(padding-top, 60, 20, 1920, 768, 1);
+      @include adaptiveValue(padding-right, 40, 20, 991.98, 360, 1);
+      @include adaptiveValue(padding-left, 40, 20, 1920, 360, 1);
+      @include adaptiveValue(padding-bottom, 40, 20, 1920, 360, 1);
+
+      border-right: 1px solid var(--secondary);
+      border-bottom: 1px solid var(--secondary);
+      min-height: rem(185);
+
+      @media screen and (min-width: 768px) {
+        &:nth-of-type(3n + 1) {
+          @include adaptiveValue(padding-left, 55, 20, 1920, 360, 1);
+          @include _992 {
+            padding-left: 0;
+            padding-right: rem(10);
+          }
+        }
+
+        &:nth-last-of-type(-n + 3) {
+          border-bottom: none;
+        }
+
+        &:nth-of-type(3n + 3) {
+          border-right: none;
+        }
+      }
+
+      @include _992 {
+        min-height: unset;
+        padding-bottom: rem(15);
+      }
+
+      @include _768 {
+        padding-left: rem(10);
+        &:nth-last-of-type(-n + 1) {
+          border-bottom: none;
+        }
+
+        &:nth-of-type(2n + 1) {
+          border-right: none;
+        }
+      }
+    }
+
+    &-info {
+      text-transform: uppercase;
+      font-weight: 500;
+      row-gap: rem(5);
+
+      @include _768 {
+        grid-column: span 2;
+        border: none;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        margin-bottom: rem(15);
+      }
+
+      @include _576 {
+        margin-bottom: rem(5);
+      }
+    }
+
+    &-inner {
+      display: grid;
+      grid-template-columns: minmax(auto, 515px) minmax(auto, 475px) minmax(
+          auto,
+          415px
+        );
+      counter-reset: counter;
+      @include _768 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    &-descr {
+      @include adaptiveValue(font-size, 24, 16, 1920, 360, 1);
+      font-weight: 300;
+    }
+
+    &-title {
+      @include adaptiveValue(font-size, 34, 18, 1920, 360, 1);
+      font-weight: 500;
+    }
+
+    &-text {
+      @include adaptiveValue(font-size, 24, 14, 1920, 360, 1);
+      line-height: 145.833333%; /* 35/24 */
+    }
+  }
+
+  .item-with-number {
+    position: relative;
+    @include adaptiveValue(padding-top, 140, 90, 1920, 992, 1);
+    &::before {
+      content: counter(counter, decimal-leading-zero '.');
+
+      color: var(--secondary);
+      @include adaptiveValue(top, 64, 40, 1920, 992, 1);
+      @include _768 {
+        top: rem(20);
+      }
+    }
+
+    @include _768 {
+      padding-top: rem(70);
+    }
+  }
+}

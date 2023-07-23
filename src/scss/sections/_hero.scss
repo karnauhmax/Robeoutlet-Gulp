@@ -1,0 +1,64 @@
+.hero {
+ @include adaptiveValue(padding-top, 320, 192, 1920, 1200, 1);
+ padding-bottom: 0;
+
+ @include _992 {
+   @include adaptiveValue(padding-top, 192, 100, 991, 360, 1);
+ }
+
+ @include _360 {
+  padding-top: rem(120);
+ }
+
+  .container {
+    background-color: var(--lightgrey);
+  }
+
+
+  &__title {
+    @include adaptiveValue(font-size, 120, 30, 1920, 360, 1);
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--primary);
+    word-break: break-word;
+    position: fixed;
+    z-index: -1;
+    @include adaptiveValue(top, 110, 64, 1920, 1200, 1);
+    padding-right: 15px;
+
+    @include _1200 {
+      top: rem(100);
+    }
+
+    @include _992 {
+      @include adaptiveValue(top, 75, 55, 992, 360, 1);
+    }
+
+    span {
+      @include adaptiveValue(padding-left, 100, 42, 1920, 576, 1);
+
+      @include _576 {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__img {
+    @include adaptiveValue(margin-bottom, 40, 20, 1920, 360, 1);
+    min-height: 170px;
+  }
+
+  &__warranty {
+    display: flex;
+    justify-content: center;
+    padding: rem(10) 0;
+    background-color: var(--primary);
+    color: var(--white);
+    &-title {
+      @include adaptiveValue(font-size, 40, 18, 1920, 360, 1);
+      font-weight: 500;
+      max-width: rem(800);
+      text-align: center;
+    }
+  }
+}

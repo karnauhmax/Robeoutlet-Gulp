@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+  @include('partials/head.html')
+
+  <body class="page__body">
+    <div class="site-container section-padding-top">
+      @include('partials/header.html')
+      <main class="main">
+        <section class="cart">
+          <div class="container">
+            <h1 class="section-title title-margin-bottom">SHOPPING CART</h1>
+            <div class="cart__wrapper grid">
+              <div class="cart__inner grid grid-12">
+                <div class="cart__content">
+                  <div class="cart__labels white-block uppercase-bold grid">
+                    <p class="cart__label cart__label-name">Product</p>
+                    <p
+                      class="cart__label cart__label-quantity padding-left-element"
+                    >
+                      QTY
+                    </p>
+                    <p
+                      class="cart__label cart__label-price padding-left-element"
+                    >
+                      Unit price
+                    </p>
+                    <p
+                      class="cart__label cart__label-total padding-left-element"
+                    >
+                      Total
+                    </p>
+                  </div>
+                  <article class="cart__product white-block">
+                    <div class="cart__info cart__product-item grid">
+                      <div class="cart__img ibg">
+                        <img
+                          loading="lazy"
+                          src="img/content/framed-super-white-glass.jpg"
+                          class="image"
+                          width="80"
+                          height="60"
+                          alt="Framed Super white glass doors with matt black frames"
+                        />
+                      </div>
+                      <div class="cart__details">
+                        <h3  class="cart__name uppercase-bold">
+                          Framed Super white
+                        </h3>
+                        <p class="cart__descr text-300">
+                          glass doors with matt black frames and tracks
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="cart__quantity cart__product-item grid padding-left-element"
+                    >
+                      <p
+                        class="cart__label cart__label-quantity padding-left-element cart__label-mob"
+                      >
+                        QTY
+                      </p>
+                      <span class="cart__quantity-count">2</span>
+                    </div>
+                    <div
+                      class="cart__price cart__product-item grid padding-left-element"
+                    >
+                      <p
+                        class="cart__label cart__label-price padding-left-element cart__label-mob"
+                      >
+                        Unit price
+                      </p>
+                      <span class="cart__price-value">$400</span>
+                    </div>
+                    <div
+                      class="cart__total cart__product-item grid padding-left-element"
+                    >
+                      <p
+                        class="cart__label cart__label-total padding-left-element cart__label-mob"
+                      >
+                        Unit price
+                      </p>
+                      <span class="cart__total-value">$800 inc GST</span>
+                    </div>
+                    <button class="cart__btn">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.33317 11.8334L0.166504 10.6667L4.83317 6.00008L0.166504 1.33341L1.33317 0.166748L5.99984 4.83342L10.6665 0.166748L11.8332 1.33341L7.1665 6.00008L11.8332 10.6667L10.6665 11.8334L5.99984 7.16675L1.33317 11.8334Z"
+                          fill="#C6C1C1"
+                        />
+                      </svg>
+                    </button>
+                  </article>
+                </div>
+                <div class="cart__delivery white-block grid-flow">
+                  <div class="cart__delivery-item grid-flow">
+                    <label class="checkbox-label cart-checkbox">
+                      <input
+                        type="radio"
+                        value="Free Pickup"
+                        name="Type of Delivery"
+                      />
+                      <span class="checkbox"></span>
+                    </label>
+                    <div class="cart__delivery-info grid-flow">
+                      <p class="cart__delivery-name uppercase-bold">
+                        Free pickup
+                      </p>
+                      <p class="text text-300 cart__delivery-descr">
+                        Shop 6, 76 Bundall road,Bundall, 4217
+                      </p>
+                    </div>
+                  </div>
+                  <div class="cart__delivery-item grid-flow">
+                    <label class="checkbox-label cart-checkbox">
+                      <input
+                        type="radio"
+                        value="Delivery"
+                        name="Type of Delivery"
+                      />
+                      <span class="checkbox"></span>
+                    </label>
+                    <div class="cart__delivery-info grid-flow">
+                      <p class="cart__delivery-name uppercase-bold">Delivery</p>
+                      <label class="cart__delivery-label grid-flow">
+                        <span class="text text-300">Post code:</span>
+                        <input
+                          type="number"
+                          class="cart__delivery-input input-reset custom-input"
+                        />
+                      </label>
+                      <span class="cart__delivery-total text-300 text">
+                        $60 inc GST
+                      </span>
+                    </div>
+                  </div>
+                  <div class="cart__delivery-sum cart__delivery-item grid-flow">
+                    <strong class="uppercase-bold"> subtotal: </strong>
+                    <strong class="uppercase-bold"> $860 inc gst </strong>
+                  </div>
+                </div>
+              </div>
+              <div class="cart__process">
+                <h2
+                  class="section-title title-margin-bottom cart__process-title"
+                >
+                  ORDERING PROCESS
+                </h2>
+                <div class="cart__process-inner grid">
+                  <div class="cart__process-item item-with-number grid-flow">
+                    <h3 class="cart__process-name uppercase-bold">CONFIRM</h3>
+                    <p class="text text-300 cart__process-descr">
+                      Please make sure the parameters and measurements meet your
+                      specific requirements, before submitting the order.
+                    </p>
+                  </div>
+                  <div class="cart__process-item item-with-number grid-flow">
+                    <h3 class="cart__process-name uppercase-bold">
+                      MANUFACTURE
+                    </h3>
+                    <p class="text text-300 cart__process-descr">
+                      All products are custom made to size. We start
+                      manufacturing once your order completed and payment
+                      processed. Normally it takes around 7-15 business days.
+                    </p>
+                  </div>
+                  <div class="cart__process-item item-with-number grid-flow">
+                    <h3 class="cart__process-name uppercase-bold">
+                      DELIVERY & PICKUP
+                    </h3>
+                    <p class="text text-300 cart__process-descr">
+                      Once your items are produced, our dispatch team will
+                      contact you to book delivery or pickup.
+                    </p>
+                  </div>
+                  <div class="cart__process-item item-with-number grid-flow">
+                    <h3 class="cart__process-name uppercase-bold">ASSEMBLY</h3>
+                    <p class="text text-300 cart__process-descr">
+                      Mount your products! We’ll provide you with the install
+                      guide, simply follow the instructions. All designed for
+                      hassle free installation. Should you have any questions,
+                      please contact us to assist.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <form class="cart__form form">
+                <div class="cart__form-inner grid grid-12">
+                  <div class="form__body cart__form-body grid">
+                    <h3 class="form__title uppercase-bold cart__form-title">
+                      Account&billing details
+                    </h3>
+                    <label class="form__label">
+                      <input
+                        type="text"
+                        class="form__input input-reset error"
+                        placeholder="First name"
+                      />
+                    </label>
+                    <label class="form__label">
+                      <input
+                        type="text"
+                        class="form__input input-reset"
+                        placeholder="Last name"
+                      />
+                    </label>
+                    <label class="form__label">
+                      <input
+                        type="text"
+                        class="form__input input-reset"
+                        placeholder="Company name (optional)"
+                      />
+                    </label>
+                    <label class="form__label">
+                      <input
+                        type="email"
+                        class="form__input input-reset"
+                        placeholder="Email"
+                      />
+                    </label>
+                    <label class="form__label">
+                      <input
+                        type="tel"
+                        class="form__input input-reset"
+                        placeholder="First name"
+                      />
+                    </label>
+                    <label class="form__label">
+                      <input
+                        type="text"
+                        class="form__input input-reset"
+                        placeholder="Street name"
+                        autocomplete="street-address"
+                      />
+                    </label>
+                    <label class="form__label">
+                      <input
+                        type="text"
+                        class="form__input input-reset"
+                        placeholder="Unit#"
+                      />
+                    </label>
+                    <label class="form__label">
+                      <input
+                        type="text"
+                        class="form__input input-reset"
+                        placeholder="Suburb"
+                      />
+                    </label>
+                    <label class="form__label">
+                      <input
+                        type="number"
+                        class="form__input input-reset"
+                        placeholder="Postcode"
+                      />
+                    </label>
+                    <label class="form__label">
+                      <input
+                        type="text"
+                        class="form__input input-reset"
+                        placeholder="First name"
+                      />
+                    </label>
+                    <label class="form__label textarea-label">
+                      <textarea
+                        class="form__input input-reset form__textarea cart__form-textarea"
+                        placeholder="Your comments"
+                      ></textarea>
+                    </label>
+                  </div>
+                  <div class="cart__payment white-block grid-flow">
+                    <h3 class="cart__payment-title uppercase-bold">
+                      PAYMENT OPTIONS
+                    </h3>
+                    <div class="cart__payment-options grid-flow">
+                      <label class="checkbox-label cart-checkbox text text-300">
+                        <input
+                          type="radio"
+                          value="Free Pickup"
+                          name="Type of Delivery"
+                        />
+                        Credit card/Debit/Visa
+                        <span class="checkbox"></span>
+                      </label>
+                      <label class="checkbox-label cart-checkbox text text-300">
+                        <input
+                          type="radio"
+                          value="Free Pickup"
+                          name="Type of Delivery"
+                        />
+                        Credit card/Debit/Visa
+                        <span class="checkbox"></span>
+                      </label>
+                      <label class="checkbox-label cart-checkbox text text-300">
+                        <input
+                          type="radio"
+                          value="Free Pickup"
+                          name="Type of Delivery"
+                        />
+                        AfterPay
+                        <span class="checkbox"></span>
+                      </label>
+                      <label class="checkbox-label cart-checkbox text text-300">
+                        <input
+                          type="radio"
+                          value="Free Pickup"
+                          name="Type of Delivery"
+                        />
+                        ZipPay
+                        <span class="checkbox"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <button
+                    class="cart__form-btn arrow-link dark-arrow-link"
+                    type="submit"
+                  >
+                    Order completed
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      @include('partials/footer.html')
+    </div>
+  </body>
+</html>
